@@ -1,5 +1,8 @@
 # Kizukeya!
 
+![kizukeya-light-include-bg](https://user-images.githubusercontent.com/15998572/146478337-b9ebcae4-b158-4043-ae8f-5a73eff862b3.png)
+
+
 Product of Hack U KOSEN 2021 ([link](https://hacku.yahoo.co.jp/kosen2021/))
 
 Slack <-> Node.js <-> Raspberry Pi(Python)
