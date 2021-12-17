@@ -1,5 +1,5 @@
 # Kizukeya!
-
+> 絶対に気づかせるための物理通知システム
 ![kizukeya-light-include-bg](https://user-images.githubusercontent.com/15998572/146478337-b9ebcae4-b158-4043-ae8f-5a73eff862b3.png)
 
 
