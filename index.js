@@ -18,63 +18,31 @@ slackEvents.on("message", async (event) => {
     `Received a message event: user ${event.user} in channel ${event.channel} says ${event.text}`
   );
   let text = event.text;
-  if (text == "::inc") {
-    console.log("[function] Increment");
+  if (text == "!kizukeya") {
+    console.log("[function] kizukeya");
 
     (async () => {
       try {
-        const response = await axios.get(relayURL + "/inc");
-        console.log("response value: " + response.data);
+        const response = await axios.get(relayURL);
+        console.table(response.data);
 
-        await web.chat.postMessage({
-          text: `:arrow_up: Increment (to ${response.data})`,
+        // await web.chat.postMessage({
+        //   text: `:white_check_mark: !kizukeyaは (to ${response.data})`,
+        //   channel: event.channel,
+        // });
+        await web.reactions.add({
           channel: event.channel,
+          name: "white_check_mark",
+          timestamp: event.ts,
         });
       } catch (error) {
-        console.log(error.response.body);
-      }
-    })();
-  } else if (text == "::dec") {
-    console.log("[function] Decrement");
-    (async () => {
-      try {
-        const response = await axios.get(relayURL + "/dec");
-        console.log("response value: " + response.data);
-
-        await web.chat.postMessage({
-          text: `:arrow_down: Decrement (to ${response.data})`,
-          channel: event.channel,
-        });
-      } catch (error) {
-        console.log(error.response.body);
-      }
-    })();
-  } else if (text == "::status") {
-    console.log("[function] Status");
-
-    (async () => {
-      try {
-        const response = await axios.get(relayURL + "/status");
-        console.log("response value: " + response.data.value);
-        await web.chat.postMessage({
-          text: `:newspaper: Status
-          現在の強度：${response.data.value}(${
-            response.data.value == 0 ? "オフ" : "オン"
-          })
-          `,
-          channel: event.channel,
-        });
-      } catch (error) {
-        console.log(error.response.body);
+        console.log(error);
       }
     })();
   } else if (text == "::help") {
     await web.chat.postMessage({
       text: `:paperclip: help
-    ::inc オン/増やす
-    ::dec オフ/減らす
-    ::status 現状
-    ::help ヘルプ
+    !kizukeya 気づけや！！！ってできます
     `,
       channel: event.channel,
     });

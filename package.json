@@ -11,7 +11,7 @@
   },
   "scripts": {
     "start": "node index.js",
-    "ngrok:serve": "cd ngrok && ./ngrok http 3000 --region jp --subdomain slackrelay",
-    "esp32:serve": "cd ngrok && ./ngrok http 192.168.0.32:80 --subdomain esp32relay"
+    "slack:serve": "cd ngrok && ./ngrok http 3000 --region jp --subdomain slackrelay",
+    "rspi:serve": "cd ngrok && ./ngrok http 192.168.0.242:3000 --subdomain rspirelay"
   }
 }
